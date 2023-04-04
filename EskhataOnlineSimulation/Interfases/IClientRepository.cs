@@ -8,7 +8,7 @@ namespace EskhataOnlineSimulation.Interfases
 {
   public  interface IClientRepository
     {
-        Client GetClient(int IdClient);
+       public IEnumerable <Client> GetClient(int IdClient);
 
     }
 }

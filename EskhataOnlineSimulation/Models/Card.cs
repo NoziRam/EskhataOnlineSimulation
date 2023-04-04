@@ -9,9 +9,9 @@ namespace EskhataOnlineSimulation.Models
     {
         public int Id { get; set; }
 
-        public int Name { get; set; }
+        public string Name { get; set; }
 
-        public int Account { get; set; }
+        public long Account { get; set; }
 
         public bool Status { get; set; }
         
