@@ -21,6 +21,6 @@ namespace EskhataOnlineSimulation.Models
 
         public string Gender { get; set; }
 
-        public string Card { get; set; }
+        public List<Card> Card { get; set; }
     }
 }

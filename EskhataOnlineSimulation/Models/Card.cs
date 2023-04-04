@@ -14,7 +14,8 @@ namespace EskhataOnlineSimulation.Models
         public int Account { get; set; }
 
         public bool Status { get; set; }
-
+        
+        public virtual Client Client { get; set; } 
 
     }
 }
