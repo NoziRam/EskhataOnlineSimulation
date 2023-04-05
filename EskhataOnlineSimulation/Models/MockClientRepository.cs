@@ -8,24 +8,21 @@ namespace EskhataOnlineSimulation.Models
 {
     public class MockClientRepository : IClientRepository
     {
-      //  private List<Client> _clients = null;
+       private List<Client> _clients = null;
 
-        IEnumerable<Client> IClientRepository.GetClient(int IdClient)
+        public MockClientRepository()
         {
-            get
-            {
+            _clients = new List<Client>() {
 
-                return new List<Client> { 
-                
-                new Client() { Id=1, FirstName = "Гайратчон", LastName ="Каримов", PhoneNumber = 928207882, Gender = "мард", Email= "karimi@com"}
+            new Client(){FirstName="Гайратчон", LastName="Каримов", PhoneNumber = 927926090, Gender ="" }
 
 
-                 };
-            }
+            };
         }
-        //public Client GetClient(int IdClient)
-        //{
-        //    return _clients.FirstOrDefault(client => client.Id.Equals(IdClient));
-        //}
+        
+    public Client GetClient(int IdClient)
+    {
+        return _clients.FirstOrDefault(client => client.Id.Equals(IdClient));
     }
+}
 }
