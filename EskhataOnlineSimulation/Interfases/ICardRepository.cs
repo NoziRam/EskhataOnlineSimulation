@@ -8,11 +8,13 @@ namespace EskhataOnlineSimulation.Interfases
 {
   public  interface ICardRepository
     {
+        Card GetCardId(int Id);
+        
         IEnumerable<Card> Cards { get; }
 
         Card GetCardAccount { get; set; }
 
-        Card GetCardId(int cardId);
+        
 
     }
 }
