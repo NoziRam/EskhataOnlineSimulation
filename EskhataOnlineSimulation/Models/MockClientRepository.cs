@@ -20,9 +20,9 @@ namespace EskhataOnlineSimulation.Models
             };
         }
         
-    public Client GetClient(int IdClient)
+    public IEnumerable< Client> GetClient()
     {
-        return _clients.FirstOrDefault(client => client.Id.Equals(IdClient));
+            return _clients;
     }
 }
 }

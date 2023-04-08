@@ -19,16 +19,13 @@ namespace EskhataOnlineSimulation.Controllers
             _cardRepository = cardRepository;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        public ViewResult Client(int? IdClient)
+
+        public ViewResult Index (int? IdClient)
         {
             HomeIndexViewModel viewModel = new HomeIndexViewModel()
             {
-                Client = _clientRepository.GetClient(IdClient ?? 1)
+                Client = _clientRepository.GetClient()
 
 
             };
