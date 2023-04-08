@@ -26,6 +26,7 @@ namespace EskhataOnlineSimulation
         {
             services.AddMvc(options=>options.EnableEndpointRouting=false);
             services.AddSingleton<IClientRepository, MockClientRepository>();
+            services.AddSingleton<ICardRepository,MockCardRepository>();
             
         }
 

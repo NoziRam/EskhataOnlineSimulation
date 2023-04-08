@@ -30,11 +30,11 @@ namespace EskhataOnlineSimulation.Controllers
         
         }
 
-        public ViewResult Details(int id)
+        public ViewResult Details(int? id)
         {
             HomeDetailsViewModel viewModel = new HomeDetailsViewModel()
             {
-                
+                Card = _cardRepository.GetCardId(id??1)
 
             };
           
