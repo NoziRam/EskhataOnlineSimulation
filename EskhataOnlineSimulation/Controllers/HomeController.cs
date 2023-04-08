@@ -24,17 +24,24 @@ namespace EskhataOnlineSimulation.Controllers
             return View();
         }
 
-        public string Client()
+        public ViewResult Client(int? IdClient)
         {
-          return  _clientRepository.GetClient(1)?.FirstName;
+            HomeIndexViewModel viewModel = new HomeIndexViewModel()
+            {
+                Client = _clientRepository.GetClient(IdClient ?? 1)
+
+
+            };
+            return View(viewModel);
+
         
         }
 
-        public ViewResult Details(int id)
+        public ViewResult Details(int? id)
         {
             HomeDetailsViewModel viewModel = new HomeDetailsViewModel()
             {
-                
+                Card = _cardRepository.GetCardId(id??1)
 
             };
           

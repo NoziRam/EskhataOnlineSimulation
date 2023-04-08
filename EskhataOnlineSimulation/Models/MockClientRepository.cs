@@ -14,7 +14,7 @@ namespace EskhataOnlineSimulation.Models
         {
             _clients = new List<Client>() {
 
-            new Client(){FirstName="Гайратчон", LastName="Каримов", PhoneNumber = 927926090, Gender ="" }
+            new Client(){ Id =1, FirstName="Гайратчон", LastName="Каримов", PhoneNumber = 927926090, Gender ="men", DateOfBirth = DateTime.Today }
 
 
             };

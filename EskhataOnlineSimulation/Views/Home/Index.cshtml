@@ -1,1 +1,23 @@
-﻿
+﻿@model HomeIndexViewModel
+
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top" src="~/images/card_yagona.jpg" />
+
+                <h4>Card ID : @Model.Client.Id</h4>
+                <h4>First Name : @Model.Client.FirstName</h4>
+                <h4>Last Name : @Model.Client.LastName</h4>
+                <h4>Phone number  @Model.Client.PhoneNumber</h4>
+                <h4>Gender: @Model.Client.Gender</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
