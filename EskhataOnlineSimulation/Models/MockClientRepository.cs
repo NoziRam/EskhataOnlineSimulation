@@ -14,13 +14,20 @@ namespace EskhataOnlineSimulation.Models
         {
             _clients = new List<Client>() {
 
-            new Client(){ Id =1, FirstName="Гайратчон", LastName="Каримов", PhoneNumber = 927926090, Gender ="men", DateOfBirth = DateTime.Today }
+            new Client(){ Id =1, FirstName="Гайратчон", LastName="Каримов", PhoneNumber = 927926090, Gender =Gender.Man, DateOfBirth = DateTime.Today }
 
 
             };
         }
-        
-    public IEnumerable< Client> GetClient()
+
+        public Client Create(Client client)
+        {
+            client.Id = _clients.Max(c => c.Id) + 1;
+            _clients.Add(client);
+            return client;
+        }
+
+        public IEnumerable< Client> GetClient()
     {
             return _clients;
     }

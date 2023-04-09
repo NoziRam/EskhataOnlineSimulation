@@ -19,7 +19,7 @@ namespace EskhataOnlineSimulation.Models
 
         public DateTime DateOfBirth { get; set; }
 
-        public string Gender { get; set; }
+        public Gender Gender { get; set; }
 
         public List<Card> Card { get; set; }
     }

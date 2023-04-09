@@ -1,4 +1,5 @@
 ﻿using EskhataOnlineSimulation.Interfases;
+using EskhataOnlineSimulation.Models;
 using EskhataOnlineSimulation.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -19,19 +20,19 @@ namespace EskhataOnlineSimulation.Controllers
             _cardRepository = cardRepository;
         }
 
-
-
-        public ViewResult Index (int? IdClient)
+               
+        public ViewResult Index ()
         {
-            HomeIndexViewModel viewModel = new HomeIndexViewModel()
-            {
-                Client = _clientRepository.GetClient()
-
-
-            };
-            return View(viewModel);
+           
+            return View();
 
         
+        }
+
+        public ViewResult MainPage()
+        {
+            return View();
+
         }
 
         public ViewResult Details(int? id)
@@ -44,6 +45,19 @@ namespace EskhataOnlineSimulation.Controllers
           
 
             return View(viewModel);
+        
+        }
+        [HttpGet]
+        public ViewResult Create()
+        {
+            return View();
+        
+        }
+        [HttpPost]
+        public IActionResult Create(Client client)
+        {
+            var newClient= _clientRepository.Create(client);
+            return RedirectToAction("MainPage", new { newClient.Id });
         
         }
     }
