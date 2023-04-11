@@ -29,10 +29,14 @@ namespace EskhataOnlineSimulation.Controllers
         
         }
 
-        public ViewResult MainPage()
+        public ViewResult MainPage(int? id)
         {
-            return View();
+            HomeMainPageViewModel viewModel = new HomeMainPageViewModel()
+            {
+                Client = _clientRepository.GetClient(id??1)
+            };
 
+            return View(viewModel);
         }
 
         public ViewResult Details(int? id)
@@ -42,8 +46,6 @@ namespace EskhataOnlineSimulation.Controllers
                 Card = _cardRepository.GetCardId(id??1)
 
             };
-          
-
             return View(viewModel);
         
         }
@@ -57,7 +59,7 @@ namespace EskhataOnlineSimulation.Controllers
         public IActionResult Create(Client client)
         {
             var newClient= _clientRepository.Create(client);
-            return RedirectToAction("MainPage", new { newClient.Id });
+            return RedirectToAction("MainPage", new {id= newClient.Id });
         
         }
     }
