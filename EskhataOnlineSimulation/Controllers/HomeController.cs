@@ -29,10 +29,14 @@ namespace EskhataOnlineSimulation.Controllers
         
         }
 
-        public ViewResult MainPage()
+        public ViewResult MainPage(int? id)
         {
-            return View();
+            HomeMainPageViewModel viewModel = new HomeMainPageViewModel()
+            {
+                Client = _clientRepository.GetClient(id??1)
+            };
 
+            return View(viewModel);
         }
 
         public ViewResult Details(int? id)
