@@ -57,7 +57,7 @@ namespace EskhataOnlineSimulation.Controllers
         }
         [HttpPost]
         public IActionResult Create(Client client)
-        {
+        {            
             var newClient= _clientRepository.Create(client);
             return RedirectToAction("MainPage", new {id= newClient.Id });
         
