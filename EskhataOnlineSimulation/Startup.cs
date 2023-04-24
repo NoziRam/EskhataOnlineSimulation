@@ -40,6 +40,7 @@ namespace EskhataOnlineSimulation
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
+           
         }
     }
 }
